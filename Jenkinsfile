@@ -26,7 +26,7 @@ pipeline {
             steps {
                 sh '''
                     cd /opt
-                    sudo ansible-playbook playbook.yml --extra-vars deployment_state=started -e ansible_python_interpreter=/usr/bin/python3
+                    sudo ansible-playbook docker-compose.yml --extra-vars deployment_state=started -e ansible_python_interpreter=/usr/bin/python3
                 '''
             }
         }
@@ -37,7 +37,7 @@ pipeline {
             steps {
                 sh '''
                     cd /opt
-                    sudo ansible-playbook playbook.yml --extra-vars deployment_state=absent -e ansible_python_interpreter=/usr/bin/python3
+                    sudo ansible-playbook docker-compose.yml --extra-vars deployment_state=absent -e ansible_python_interpreter=/usr/bin/python3
                 '''
             }
         }
