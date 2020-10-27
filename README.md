@@ -34,6 +34,7 @@ Pre-requisites:
 # Install docker-compose
     yum install python3-pip -y
     pip3 install docker-compose 
+# Create docker-compose.yml file inside /opt Directory
 # Clone Springboot-mongodb application:
     git clone https://github.com/Naresh240/docker.git
     cd docker/springboot-mongodb-dockercompose
