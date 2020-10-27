@@ -7,6 +7,7 @@ Pre-requisites:
   - Install Docker
   - Install Docker-compose
   - Install jenkins
+  - Ansible Setup
 # Ansible setup: (Master Server)
     amazon-linux-extras install ansible2 -y
     ssh-keygen
