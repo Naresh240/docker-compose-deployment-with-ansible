@@ -9,7 +9,6 @@ pipeline {
     stages {
         stage('SCM') {
             steps {
-                sh 'cd /opt'
                 checkout([$class: 'GitSCM', branches: [[name: '*/master']], 
                 doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], 
                 userRemoteConfigs: [[url: 'https://github.com/Naresh240/spring-boot-hello.git']]])
@@ -26,7 +25,7 @@ pipeline {
             }            
             steps {
                 sh '''
-                    cd /opt/docker-compose-deployment-with-ansible
+                    cd /opt
                     sudo ansible-playbook docker-compose.yml --extra-vars deployment_state=started -e ansible_python_interpreter=/usr/bin/python3
                 '''
             }
@@ -37,7 +36,7 @@ pipeline {
             }            
             steps {
                 sh '''
-                    cd /opt/docker-compose-deployment-with-ansible
+                    cd /opt
                     sudo ansible-playbook docker-compose.yml --extra-vars deployment_state=absent -e ansible_python_interpreter=/usr/bin/python3
                 '''
             }
