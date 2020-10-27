@@ -31,6 +31,11 @@ Pre-requisites:
     usermod -aG docker jenkins
 # Restart Jenkins:
     service jenkins restart
+# Provide sudo permission for jenkins user
+    visudo
+    --------
+    jenkins ALL=(ALL)       NOPASSWD: ALL
+    --------
 # Install docker-compose
     yum install python3-pip -y
     pip3 install docker-compose 
