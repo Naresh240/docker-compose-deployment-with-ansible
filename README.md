@@ -55,12 +55,16 @@ Pre-requisites:
 # Deploy docker-compose using ansible at Jenkins
 Step1:
   Integreate Git and Maven with Jenkins
+  
 Step2:
   Create Docker Credentials
+  
 Step3:
   Create Jenkins Pipeline Job and copy jenkins pipeline inside pipeline section
+  
  Step4:
   Build Jenkins job
+  
 # Use postman app and Add Employee data
 Check API: /addEmployee
 
