@@ -1,0 +1,19 @@
+---
+- hosts: docker
+  tasks:
+  - name: "Launch mongodb database container"
+    docker_container:
+      name: mymongodb
+      image: mongo:latest
+      state: "{{ deployment_state }}"
+      ports:
+      - 27017:27017
+  - name: "springboot-mongodb application container"
+    docker_container:
+      name: springboot-mongodb
+      image: naresh240/springboot-mongodb:1.0
+      state: "{{ deployment_state }}"
+      links:
+      - mymongodb
+      ports:
+      - 8080:8080
