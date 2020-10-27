@@ -9,6 +9,7 @@ pipeline {
     stages {
         stage('SCM') {
             steps {
+                sh 'cd /opt'
                 checkout([$class: 'GitSCM', branches: [[name: '*/master']], 
                 doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], 
                 userRemoteConfigs: [[url: 'https://github.com/Naresh240/spring-boot-hello.git']]])
